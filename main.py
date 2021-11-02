@@ -62,8 +62,8 @@ class App(tk.Frame):
             color_num = self.tetris.get_color(i // self.tetris.WIDTH, i % self.tetris.WIDTH)
             self.canvas.itemconfig(_id, fill=self.tetris.COLORS[color_num])
         
-        self.status_msg['text'] = "Puntaje: {}\nNivel: {}\n\nPresione P\npara pausar\nESC Para salir\n".format(self.tetris.score, self.tetris.level)
-        self.game_over_msg['text'] = "GAME OVER\n\n\nPresione\nEspacio\npara reiniciar" if self.tetris.game_over else ""
+        self.status_msg['text'] = "Score: {}\nLevel: {}\n\nP - Pause\nESC - Exit\n".format(self.tetris.score, self.tetris.level)
+        self.game_over_msg['text'] = "GAME OVER\n\n\nPress\nSpace\nto restart" if self.tetris.game_over else ""
         if self.tetris.game_over == True: 
             while self.tetris.reset is False:
                 self.audio.stop_music()
